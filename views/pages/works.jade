@@ -1,0 +1,89 @@
+extends ../layout
+
+block variables
+    - var title = 'Мои работы'
+
+block content
+    .wrapper
+        header.header
+            include ../common/header
+
+            .header__triangle
+                .header__triangle-svg
+                    include ../../source/icons/triangle.svg
+                .arrow-down-little
+                    a(href='#slider')
+                        include ../../source/icons/arrow_down.svg
+
+        .works
+            .works__title
+                .big__title
+                    .title-dashes__bg.title-dashes__bg--works
+                        include ../../source/icons/works_header.svg
+                    .title-dashes.title--bg Мои работы
+
+            #slider.slider
+                .slider__content
+                    #content.slider__content-main
+                        .title.title--slider.title-dashes Сайт школы онлайн Образования
+                        .slider__content-technologies HTML, CSS, JAVASCRIPT
+                        a(href='#').btn-website-link
+                            button.btn-website
+                                i(class="fa fa-link" aria-hidden="true")
+                                | Посмотреть сайт
+                #slide.slider__img
+                    img.slider__slide-img.active-slide(src='slider/img/work-1.png', alt='')
+                    img.slider__slide-img(src='slider/img/work-2.png', alt='')
+                    img.slider__slide-img(src='slider/img/work-3.png', alt='')
+                    img.slider__slide-img(src='slider/img/work-4.png', alt='')
+                .display__button
+                    #sliderBtnDown.slider__button-down
+                        img.slider__button-img(src='slider/img/work-1.png', alt='')
+                        img.slider__button-img(src='slider/img/work-2.png', alt='')
+                        img.slider__button-img(src='slider/img/work-3.png', alt='')
+                        img.slider__button-img.active(src='slider/img/work-4.png', alt='')
+                    #sliderBtnUp.slider__button-up
+                        img.slider__button-img.slider__button-img--up(src='slider/img/work-1.png', alt='')
+                        img.slider__button-img.slider__button-img--up.active(src='slider/img/work-2.png', alt='')
+                        img.slider__button-img.slider__button-img--up(src='slider/img/work-3.png', alt='')
+                        img.slider__button-img.slider__button-img--up(src='slider/img/work-4.png', alt='')
+        .about-talk
+            .big__title
+                .title-dashes__bg.title-dashes__bg--about-me
+                    include ../../source/icons/about_header.svg
+                .title-dashes.title--bg.title-dashes--double Что обо мне говорят
+
+            .about-talk__comment
+                .about-talk__comment-block
+                    .about-talk__comment-content
+                        .about-talk__comment-text.
+                            Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний!
+                        .about-talk__comment-author
+                            .user__avatar.user__avatar--comment
+                                img.user__avatar-img(src="images/works/dima.png")
+                            .about-talk__comment-name
+                                .about-talk__comment-fio Ковальчук Дмитрий
+                                .about-talk__comment-description основатель Loftschool
+
+                .about-talk__comment-block
+                    .about-talk__comment-content
+                        .about-talk__comment-text.
+                            Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .about-talk__comment-author
+                            .user__avatar.user__avatar--comment
+                                img.user__avatar-img(src="images/works/zar.png")
+                            .about-talk__comment-name
+                                .about-talk__comment-fio Зар Захаров
+                                .about-talk__comment-description преподаватель
+
+            .about-talk__contact
+                .title.title-dashes Связаться со мной
+                form.about-talk__form
+                    input(type="text" placeholder="Имя").contact-input
+                    input(type="text" placeholder="Email").contact-input
+                    textarea(rows="7" placeholder="Ваше сообщение").contact-textarea
+                .start__btns
+                    a(href='#').start__btn Отправить
+                    a(href='#').start__btn Очистить
+
+        include ../common/footer

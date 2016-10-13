@@ -1,0 +1,138 @@
+.authorization__main
+  padding: 0 20px
+
+.authorization__item
+  position: relative
+  width: 340px
+  height: 45px
+  border-radius: 5px
+  background-color: #ffffff
+  margin: 10px auto 20px
+  text-align: left
+  overflow: hidden
+  &:hover
+    .authorization__icon
+      color: #00bfa5
+
+
+  @include tablet
+    width: 310px
+
+  @include mobile
+    width: 260px
+    margin-top: 20px
+
+
+.authorization__icon
+  position: absolute
+  display: inline-block
+  height: 100%
+  width: 45px
+  background: #f0efe9
+  font-size: 18px
+  line-height: 2.5
+  color: #c4cbcd
+  text-align: center
+  transition: color 0.5s
+
+.authorization__input
+  box-sizing: border-box
+  position: absolute
+  display: inline-block
+  height: 100%
+  width: 295px
+  outline: none
+  padding: 0 10px
+  right: 0
+  border: 1px white solid
+  border-radius: 0 5px 5px 0
+  transition: 0.5s
+  &:focus, &:hover
+    border-color: #00bfa5
+
+  &::-webkit-input-placeholder
+    color: rgba(55, 62, 66, 0.5)
+
+  @include tablet
+    width: 265px
+
+  @include mobile
+    width: 210px
+
+
+.radio-text
+  font-family: robotomedium, serif
+  color: rgba(69, 90, 100, 0.8)
+  line-height: 2
+  margin: 10px 10px 0 10px
+  @include mobile
+    margin-top: 15px
+
+
+.checkbox
+  box-sizing: border-box
+  font-family: robotoregular, serif
+  font-size: 16px
+  line-height: 20px
+  text-align: center
+  color: rgba(69, 90, 100, .8)
+  label:before
+    font-family: FontAwesome, serif
+    display: inline-block
+    font-size: 13px
+    text-align: center
+    line-height: 22px
+    content: "\00a0"
+    border-radius: 2px
+    background-color: #ffffff
+    border: solid 1px #cccccc
+    width: 20px
+    height: 20px
+    margin-right: 10px
+
+  input[type=checkbox]
+    display: none
+    &:checked + label:before
+      content: "\f00c"
+      color: #f3f3f3
+      background-color: #00bfa5
+      border: solid 1px transparent
+
+
+
+.radio
+  box-sizing: border-box
+  font-family: robotoregular, serif
+  font-size: 16px
+  text-align: center
+  color: rgba(69, 90, 100, 0.8)
+  label:before
+    font-family: FontAwesome, serif
+    display: inline-block
+    font-size: 28px
+    text-align: center
+    line-height: 20px
+    content: "\00a0"
+    border-radius: 13px
+    background-color: #ffffff
+    border: solid 1px #cccccc
+    height: 21px
+    width: 21px
+    margin-right: 10px
+    vertical-align: text-bottom
+    @include mobile
+      height: 18px
+      width: 18px
+
+
+  input[type=radio]
+    display: none
+    &:checked + label:before
+      content: "\2022"
+      color: #00bfa5
+      background-color: #ffffff
+
+
+  label
+    margin: 0 17px
+

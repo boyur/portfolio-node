@@ -1,0 +1,119 @@
+@import "../../_misc/media"
+
+.works__title
+  display: block
+  background-color: #faf8f0
+  text-align: center
+
+.about-talk
+  position: relative
+  text-align: center
+  padding: 26px
+  background: url("../images/works/bg.jpg") bottom
+  background-size: cover
+  @include mobile
+    padding: 10px
+
+
+.about-talk__comment
+  display: flex
+  width: 800px
+  margin: 20px auto 40px
+  @include tablet
+    width: auto
+
+  @include mobile
+    display: block
+
+
+.about-talk__comment-block
+  display: inline-block
+  width: 45%
+  vertical-align: top
+  text-align: left
+  margin: 1em
+  &:first-child
+    margin-left: 0
+
+  &:last-child
+    margin-right: 0
+
+  @include mobile
+    display: block
+    width: auto
+    margin: 0 0 1em
+
+  &:before
+    font-family: FontAwesome, serif
+    content: '\f10d'
+    display: block
+    margin-bottom: .55em
+    color: rgba(55, 62, 66, 0.2)
+    font-size: 2.2em
+    line-height: 1
+    @include mobile
+      text-align: center
+
+
+
+.about-talk__comment-text
+  line-height: 1.6
+  color: #455a64
+
+.about-talk__comment-author
+  margin-top: 20px
+
+.about-talk__comment-name
+  display: inline-block
+  vertical-align: middle
+  color: #20b5a1
+  line-height: 1.5
+
+.about-talk__comment-fio
+  font-family: robotobold, serif
+
+.about-talk__contact
+  position: relative
+  width: 380px
+  padding: 20px 0 50px
+  border-radius: 5px
+  background-image: url("../images/works/contact.jpg")
+  margin: auto auto 300px
+  overflow: hidden
+  transition: .5s
+  @include tablet
+    width: 340px
+
+  @include mobile
+    width: 300px
+    margin: auto auto 100px
+
+
+.about-talk__form
+  margin-top: 20px
+  @include tablet
+    margin-top: 0
+
+
+.contact-input, .contact-textarea
+  box-sizing: border-box
+  width: 340px
+  min-height: 45px
+  border-color: transparent
+  border-radius: 5px
+  background-color: #ffffff
+  margin: 10px 0
+  padding: 0 20px
+  &::-webkit-input-placeholder
+    color: rgba(55, 62, 66, 0.5)
+
+  @include tablet
+    width: 300px
+    min-height: 40px
+
+  @include mobile
+    width: 260px
+
+
+.contact-textarea
+  padding: 20px

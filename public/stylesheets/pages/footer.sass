@@ -1,0 +1,103 @@
+@import "../_misc/media"
+
+.footer
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  background-color: rgba(55, 62, 66, 0.85)
+
+.footer__top, .footer__buttom
+  box-sizing: border-box
+  padding: 18px 30px
+  color: white
+  font-size: 0
+
+.footer__buttom
+  font-family: robotolight, serif
+  padding: 12px 30px
+  color: rgba(255, 255, 255, 0.5)
+  line-height: 1.5
+  @include mobile
+    display: none
+
+
+.footer__top
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+  @include mobile
+    border: none
+    padding: 20px 10px
+
+
+.footer__top-left
+  width: 50%
+  display: inline-block
+  vertical-align: middle
+  font-size: 1rem
+  li
+    padding-right: 35px
+    display: inline-block
+    @include mobile
+      padding: 0 5px
+      font-size: 12px
+
+
+  a
+    transition: color 0.5s
+    text-decoration: none
+    color: white
+    &:hover
+      color: #00BFA5
+
+
+  @include tablet
+    text-align: center
+    width: auto
+    display: block
+
+  @include mobile
+    text-align: center
+    width: auto
+    display: block
+
+
+.footer__top-right
+  width: 50%
+  display: inline-block
+  vertical-align: middle
+  text-align: right
+  font-size: 1rem
+  @include tablet
+    text-align: center
+    width: auto
+    display: block
+    padding-top: 20px
+
+  @include mobile
+    display: none
+
+
+.footer__buttom-left
+  display: inline-block
+  width: 30%
+  vertical-align: middle
+  text-align: left
+  font-size: 1rem
+  @include tablet
+    text-align: center
+    width: auto
+    display: block
+
+
+.footer__buttom-right
+  display: inline-block
+  width: 70%
+  text-align: right
+  vertical-align: middle
+  font-size: 1rem
+  @include tablet
+    text-align: center
+    width: auto
+    display: block
+    padding-top: 20px
+

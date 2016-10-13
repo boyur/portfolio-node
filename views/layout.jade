@@ -1,0 +1,29 @@
+block variables
+    - var title = 'Артем Боюр'
+
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        title #{title}
+        meta(content="" name="author")
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(name="viewport" content="wight=device-width, initial-scale=1")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        link(rel='stylesheet', href='../stylesheets/style.css')
+
+        script(src='../javascripts/main.js' defer)
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBluTHs8Pa9TV-f7951IqQNzOM2H6X-HRU&callback=initMap" defer)
+
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+    body
+        .preloader#preloader
+            .preloader__main
+                .preloader__spiner
+                span.preloader__value(data-unit="%")#preloaderCounter 0
+        block content

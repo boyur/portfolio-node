@@ -1,0 +1,28 @@
+.authorization.welcome__flipper--back#authBlock
+    .authorization__main
+        .title.title--auth.title-dashes Авторизуйтесь
+
+        .authorization__item
+            .authorization__icon
+                i(class="fa fa-user" aria-hidden="true")
+            input(type="text" placeholder="Логин").authorization__input
+
+        .authorization__item
+            .authorization__icon
+                i(class="fa fa-key" aria-hidden="true")
+            input(type="password" placeholder="Пароль").authorization__input
+
+        .checkbox
+            input(id="check1" type="checkbox" name="check" value="check1")
+            label(for="check1") Я человек
+
+        .radio-text Вы точно не робот?
+        .radio
+            input(id="radio1" type="radio" name="radio" value="yes")
+            label(for="radio1") Да
+            input(id="radio2" type="radio" name="radio" value="no")
+            label(for="radio2") Не уверен
+
+    .start__btns
+        a(href='#').start__btn.start__btn--auth#welcomeBtn На главную
+        a(href='#').start__btn.start__btn--auth Войти

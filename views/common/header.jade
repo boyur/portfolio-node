@@ -1,0 +1,37 @@
+.header__top
+    .social.social--header
+        a(href='#')
+            i(class="fa fa-vk" aria-hidden="true")
+        a(href='#')
+            i(class="fa fa-github-alt" aria-hidden="true")
+        a(href='#')
+            i(class="fa fa-linkedin-square" aria-hidden="true")
+    .nav.nav--main#nav
+        .nav__trigger#navTrigger
+            .nav__trigger-line
+            .nav__trigger-line
+            .nav__trigger-line
+        .nav__drop#navOpen
+            .nav__list
+                .nav__item
+                    a(href="works.html").nav__link.title.title-dashes.title-dashes--white
+                        | Мои работы
+                .nav__item
+                    a(href="about.html").nav__link.title.title-dashes.title-dashes--white
+                        | Обо мне
+                .nav__item
+                    a(href="blog.html").nav__link.title.title-dashes.title-dashes--white
+                        | Блог
+                .nav__item
+                    a(href="/").nav__link.title.title-dashes.title-dashes--white
+                        | Главная
+
+.header__main
+    .header__title
+        .title-dashes__bg.title-dashes__bg--auto
+            include ../../source/icons/portfolio_header.svg
+        .user__info.title--bg
+            .user__avatar
+                img.user__avatar-img(src="images/welcome/avatar.jpg")
+            .user__title.user__title--header Артем Боюр
+            .user__text Личный сайт веб разработчика

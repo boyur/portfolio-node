@@ -1,0 +1,185 @@
+@import "../_misc/media"
+
+.title
+  display: inline-block
+  position: relative
+  font-family: bernier_regularregular, serif
+  font-size: 35px
+  line-height: 1.2
+  text-align: center
+  color: #455a64
+  @include tablet
+    font-size: 28px
+    vertical-align: middle
+
+  @include mobile
+    font-size: 28px
+    vertical-align: middle
+
+
+.title--big
+  font-size: 63px
+  @include tablet
+    font-size: 50px
+
+  @include mobile
+    font-size: 35px
+
+
+.title--about
+  position: absolute
+  width: 40%
+  top: 0
+  @include desktop
+    position: relative
+    width: 100%
+    text-align: center
+
+
+.title--auth
+  padding-bottom: 15px
+
+.title--slider
+  @include tablet
+    font-size: 28px
+
+  @include mobile
+    font-size: 21px
+
+
+.big__title
+  position: relative
+  font-size: 63px
+  font-family: bernier_regularregular, serif
+  line-height: 1
+  color: #455a64
+  display: inline-block
+  vertical-align: middle
+  @include tablet
+    font-size: 50px
+
+  @include mobile
+    font-size: 35px
+
+
+.title-medium
+  display: inline-block
+  position: relative
+  font-family: bernier_regularregular, serif
+  font-size: 35px
+  line-height: 1.2
+  text-align: center
+  color: #455a64
+  @include mobile
+    font-size: 21px
+
+
+.title-medium--about
+  position: absolute
+  width: 40%
+  top: 0
+  @include desktop
+    position: relative
+    width: 100%
+    text-align: center
+
+
+.title-dashes
+  &:after, &:before
+    display: inline-block
+    position: absolute
+    content: ''
+    width: 22px
+    height: 5px
+    opacity: 0.2
+    background-color: #373e42
+    top: 0.5em
+
+  &:after
+    right: -35px
+
+  &:before
+    left: -40px
+
+
+.title-dashes--white
+  &:after, &:before
+    background-color: #fff
+
+
+.title-dashes__bg
+  display: inline-block
+  position: relative
+  opacity: .07
+
+.title-dashes__bg--works
+  svg
+    width: 506px
+    height: 165px
+
+  @include tablet
+    svg
+      width: 404px
+      height: 132px
+
+
+  @include mobile
+    svg
+      width: 253px
+      height: 83px
+
+
+
+.title-dashes__bg--about-me
+  svg
+    width: 499px
+    height: 175px
+
+  @include tablet
+    svg
+      width: 398px
+      height: 140px
+
+
+  @include mobile
+    svg
+      width: 249px
+      height: 88px
+
+
+
+.title-dashes__bg--about
+  svg
+    width: 357px
+    height: 125px
+
+  @include tablet
+    svg
+      width: 249px
+      height: 88px
+
+
+  @include mobile
+    svg
+      width: 199px
+      height: 70px
+
+
+
+.title--bg
+  display: table
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+.title--bg-blog
+  transform: translate(-50%, -90%)
+
+.title--blog
+  color: white
+  display: block
+  margin-top: -50px
+
+.title-dashes--double
+  width: 300px

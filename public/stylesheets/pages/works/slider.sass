@@ -1,0 +1,198 @@
+@import "../../_misc/media"
+
+.slider
+  display: block
+  width: 100%
+  height: 100vh
+
+.slider__content
+  display: flex
+  float: left
+  align-items: center
+  justify-content: center
+  width: 50%
+  height: inherit
+  background-color: #f0efe9
+
+.slider__content-main
+  display: inline-block
+  text-align: center
+  @include tablet
+    .title-dashes
+      &:after, &:before
+        display: none
+
+
+
+
+.slider__content-technologies
+  color: #20b5a1
+  margin: 40px
+  padding: 15px 0
+  border-top: 1px rgba(0, 150, 136, 0.30) solid
+  border-bottom: 1px rgba(0, 150, 136, 0.30) solid
+  @include tablet
+    margin: 20px
+
+  @include mobile
+    font-size: 14px
+    margin: 10px
+    padding: 10px 0
+
+
+.btn-website-link
+  margin: auto
+
+.btn-website
+  width: 200px
+  height: 45px
+  border-radius: 5px
+  background-color: #00bfa5
+  color: white
+  border: 0
+  transition: background-color 0.5s
+  &:hover
+    background-color: #009688
+    cursor: pointer
+
+  i
+    margin-right: 10px
+
+  @include mobile
+    font-size: 14px
+    width: 185px
+    height: 40px
+
+
+.slider__img
+  display: flex
+  position: relative
+  height: 70%
+  align-items: center
+  justify-content: center
+  background-color: #efebe0
+
+.display__button
+  display: flex
+  height: 30%
+
+@media screen and (max-width: 1200px)
+  .slider
+    display: flex
+    flex-flow: row wrap
+    height: 100vh
+
+  .slider__content
+    float: none
+    width: 100%
+    height: 30%
+
+  .slider__img
+    width: inherit
+    height: 50%
+    order: -1
+
+  .display__button
+    width: inherit
+    height: 20%
+
+
+.slider__button-down, .slider__button-up
+  display: flex
+  position: relative
+  width: 50%
+  align-items: center
+  justify-content: center
+  overflow: hidden
+
+.slider__button-img
+  box-sizing: border-box
+  position: absolute
+  max-width: 100%
+  max-height: 100%
+  padding: 5%
+  top: -100%
+  transition: top .5s ease-in-out
+
+.slider__slide-img
+  box-sizing: border-box
+  position: absolute
+  max-width: 100%
+  max-height: 100%
+  padding: 5%
+  top: 0
+  opacity: 0
+  transition: top .5s ease-in-out, opacity .5s ease-in-out
+
+.slider__button-img--up
+  top: 100%
+
+.active
+  top: 0
+
+.active-slide
+  opacity: 1
+
+.slider__button-down
+  background-color: #f1ede1
+  &:before
+    content: " "
+    position: absolute
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(182, 180, 174, 0.7)
+
+  &:after
+    display: block
+    font-family: FontAwesome, serif
+    color: white
+    top: 50%
+    left: 50%
+    font-size: 60px
+    content: "\f078"
+    position: absolute
+    vertical-align: middle
+    transform: translate(-50%, -50%)
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.16)
+    transition: text-shadow 0.5s, font-size 0.3s
+
+  &:hover
+    cursor: pointer
+    &:after
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+      font-size: 90px
+
+
+
+.slider__button-up
+  background-color: #e3ded0
+  &:before
+    content: " "
+    position: absolute
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(136, 131, 114, 0.5)
+
+  &:after
+    display: block
+    font-family: FontAwesome, serif
+    color: white
+    top: 50%
+    left: 50%
+    font-size: 60px
+    content: "\f077"
+    position: absolute
+    vertical-align: middle
+    transform: translate(-50%, -50%)
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.16)
+    transition: text-shadow 0.5s, font-size 0.3s
+
+  &:hover
+    cursor: pointer
+    &:after
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+      font-size: 90px
+
+

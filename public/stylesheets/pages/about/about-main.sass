@@ -1,0 +1,76 @@
+.about
+  display: flex
+  position: relative
+  min-height: 100vh
+  @include tablet
+    display: block
+    height: auto
+
+
+.about__left
+  box-sizing: border-box
+  position: relative
+  width: 50%
+  height: 100%
+  float: left
+  padding: 20px 40px
+  background: #F0EFE9
+  @include desktop
+    height: auto
+
+  @include tablet
+    float: none
+    width: 100%
+
+  @include mobile
+    padding: 20px 10px
+
+
+.about__right
+  box-sizing: border-box
+  width: 50%
+  height: 100%
+  float: right
+  padding: 20px 40px
+  background: #EFEBE0
+  text-align: center
+  @include desktop
+    padding: 20px 10px 20px 40px
+    height: auto
+
+  @include tablet
+    float: none
+    padding: 20px
+    width: 100%
+
+  @include mobile
+    padding: 20px 10px
+
+
+.about__me
+  width: 50%
+  float: right
+  text-align: center
+  @include desktop
+    float: none
+    width: 100%
+
+
+.about__me-img
+  display: block
+  width: 90%
+  max-width: 440px
+  margin: 30px auto
+  @include mobile
+    width: 100%
+    margin: 20px auto
+
+
+.about__text
+  max-width: 440px
+  text-align: left
+  line-height: 1.5
+  margin: 30px auto
+  @include mobile
+    margin: 20px auto
+

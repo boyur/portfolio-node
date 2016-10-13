@@ -1,0 +1,46 @@
+.map
+  position: relative
+  width: 100%
+  height: 100vh
+  @include mobile
+    height: 150vh
+
+
+.map__api
+  position: relative
+  width: 100%
+  height: 100%
+
+.map__contact
+  box-sizing: border-box
+  position: absolute
+  display: inline-block
+  width: 380px
+  padding: 20px
+  border-radius: 5px
+  background-color: rgba(252, 252, 252, 0.90)
+  top: 50%
+  left: 50%
+  text-align: center
+  transform: translate(-50%, -80%)
+  @include mobile
+    top: 0
+    left: 0
+    width: 100%
+    transform: none
+
+
+.map__contact-list
+  margin: 10px 20px
+  text-align: left
+  list-style-type: none
+
+.map__contact-item
+  color: rgba(69, 90, 100, 0.8)
+  line-height: 3
+  i
+    color: #61dac9
+    padding-right: 10px
+    font-size: 24px
+    vertical-align: middle
+

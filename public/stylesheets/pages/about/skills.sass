@@ -1,0 +1,56 @@
+.skills
+  text-align: left
+
+.skill__row
+  margin-bottom: 20px
+  @include tablet
+    text-align: center
+
+
+.skill__row-title
+  font-size: 28px
+  color: #455a64
+  margin-bottom: 15px
+
+.skill__item
+  display: inline-block
+  position: relative
+  margin-right: 30px
+  text-align: center
+  transition: wight .5s, height .5s
+  svg
+    height: 120px
+    width: 120px
+    transform: rotate(-90deg)
+    background: transparent
+    border-radius: 50%
+
+  @include desktop
+    svg
+      height: 110px
+      width: 110px
+
+    margin-right: 25px
+
+  @include mobile
+    margin: 15px
+
+
+.circle-diagrams
+  fill: transparent
+  stroke: #00bfa5
+  stroke-width: 10
+
+.circle
+  fill: transparent
+  stroke: #dfdcd5
+  stroke-width: 10
+  stroke-dasharray: 101 100
+
+.skill__title
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  color: #00bfa5
+  font-size: 14px
