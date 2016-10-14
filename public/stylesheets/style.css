@@ -3204,13 +3204,12 @@ input {
 
 .wrapper-start {
   position: absolute;
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   text-align: center;
-  background-image: url("../images/welcome/bg.jpg");
-  background-size: cover;
   min-height: 550px;
   perspective: 1000; }
   .wrapper-start:after {
@@ -3223,6 +3222,22 @@ input {
 @media (max-width: 767px) {
   .wrapper-start {
     min-width: 320px; } }
+
+.parallax_layer {
+  position: absolute;
+  width: 106%;
+  margin-left: -53%;
+  left: 50%;
+  height: 106%;
+  bottom: -3%; }
+  .parallax_layer img {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
+
+.sky {
+  height: 100%; }
 
 .welcome__flipper {
   display: inline-block;

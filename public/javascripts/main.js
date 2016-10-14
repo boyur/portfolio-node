@@ -57,6 +57,37 @@
 
 })();
 
+// Parallax
+(function () {
+
+  var layer = document.getElementsByClassName('parallax_layer');
+  var speed = 50;
+  var mouse_dx;
+  var mouse_dy;
+  var speedCalc;
+  var widhtWindows = window.innerWidth/2;
+  var heightWindows = window.innerHeight/2;
+
+  window.addEventListener('mousemove', function (e) {
+
+    console.log('move');
+
+    mouse_dx = e.pageX;
+    mouse_dy = e.pageY;
+
+    var w = widhtWindows - mouse_dx;
+    var h = heightWindows - mouse_dy;
+
+    for (var i = 0; i < layer.length; i++) {
+      speedCalc = speed - i * 3;
+
+      layer[i].style.transform = 'translate3d(' + w / speedCalc + 'px, '
+        + h / speedCalc + 'px, 0px)';
+    }
+
+  });
+})();
+
 // Welcome
 (function () {
 
