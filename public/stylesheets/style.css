@@ -3229,8 +3229,7 @@ input {
   margin-left: -53%;
   left: 50%;
   height: 106%;
-  bottom: -15%;
-  transition: transform .1s; }
+  bottom: -15%; }
   .parallax_layer img {
     display: block;
     position: absolute;
