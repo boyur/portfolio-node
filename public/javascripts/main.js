@@ -61,7 +61,7 @@
 (function () {
 
   var layer = document.getElementsByClassName('parallax_layer');
-  var speed = 50;
+  var speed = 60;
   var mouse_dx;
   var mouse_dy;
   var speedCalc;
