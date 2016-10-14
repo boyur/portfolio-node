@@ -61,7 +61,7 @@
 (function () {
 
   var layer = document.getElementsByClassName('parallax_layer');
-  var speed = 60;
+  var speed = 70;
   var mouse_dx;
   var mouse_dy;
   var speedCalc;
@@ -80,7 +80,7 @@
       var h = heightWindows - mouse_dy;
 
       for (var i = 0; i < layer.length; i++) {
-        speedCalc = speed - i * 4;
+        speedCalc = speed - i * 6;
 
         layer[i].style.transform = 'translate3d(' + w / speedCalc + 'px, '
           + h / speedCalc + 'px, 0px)';
