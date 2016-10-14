@@ -68,24 +68,25 @@
   var widhtWindows = window.innerWidth/2;
   var heightWindows = window.innerHeight/2;
 
-  window.addEventListener('mousemove', function (e) {
+  document.addEventListener('mousemove', move);
 
-    console.log('move');
 
-    mouse_dx = e.pageX;
-    mouse_dy = e.pageY;
+  function move(e) {
 
-    var w = widhtWindows - mouse_dx;
-    var h = heightWindows - mouse_dy;
+      mouse_dx = e.pageX;
+      mouse_dy = e.pageY;
 
-    for (var i = 0; i < layer.length; i++) {
-      speedCalc = speed - i * 3;
+      var w = widhtWindows - mouse_dx;
+      var h = heightWindows - mouse_dy;
 
-      layer[i].style.transform = 'translate3d(' + w / speedCalc + 'px, '
-        + h / speedCalc + 'px, 0px)';
-    }
+      for (var i = 0; i < layer.length; i++) {
+        speedCalc = speed - i * 4;
 
-  });
+        layer[i].style.transform = 'translate3d(' + w / speedCalc + 'px, '
+          + h / speedCalc + 'px, 0px)';
+      }
+  }
+
 })();
 
 // Welcome
