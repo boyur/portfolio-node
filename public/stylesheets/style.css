@@ -3229,7 +3229,8 @@ input {
   margin-left: -53%;
   left: 50%;
   height: 106%;
-  bottom: -15%; }
+  bottom: -15%;
+  -webkit-transition: transform 0.1s; }
   .parallax_layer img {
     display: block;
     position: absolute;
@@ -4098,5 +4099,65 @@ input {
   transform: translate(-50%, -50%);
   color: #00bfa5;
   font-size: 14px; }
+
+.admin__header {
+  height: 80px;
+  background: #00bfa5;
+  font-family: robotomedium, serif;
+  font-size: 28px;
+  color: white;
+  padding-left: 20px;
+  line-height: 78px; }
+
+.admin__menu {
+  background: #f0efe9; }
+
+.admin__menu-item {
+  display: inline;
+  height: 60px;
+  line-height: 58px;
+  padding: 0 50px; }
+  .admin__menu-item a {
+    text-decoration: none;
+    color: #738085; }
+
+.admin__content {
+  padding: 20px; }
+
+.admin__add {
+  float: left;
+  width: 50%; }
+
+.admin__post-list {
+  float: right;
+  width: 50%; }
+
+.contact-input--admin {
+  border: 1px rgba(184, 205, 213, 0.63) solid; }
+
+.admin__submit {
+  width: 113px;
+  height: 45px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #00bfa5;
+  color: white;
+  cursor: pointer; }
+
+.admin__del {
+  width: 113px;
+  height: 25px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #00bfa5;
+  color: white;
+  cursor: pointer; }
+  .admin__del:hover {
+    background-color: #009688; }
+
+.admin__post-list {
+  width: 50%; }
+  .admin__post-list table {
+    width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

@@ -16,9 +16,6 @@ router.get('/about.html', function(req, res, next) {
   res.render('pages/about', { title: 'Артем Боюр' });
 });
 
-/* GET blog page. */
-router.get('/blog.html', function(req, res, next) {
-  res.render('pages/blog', { title: 'Артем Боюр' });
-});
+
 
 module.exports = router;

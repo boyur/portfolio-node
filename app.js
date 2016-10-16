@@ -4,11 +4,82 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+// DB Settings
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/portfolio');
 
+// Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+var jsonParser = bodyParser.json();
+
+var Blog = mongoose.model('blogs', {
+  date: String,
+  title: String,
+  body: String
+});
+
+/* GET blog page. */
+app.get('/blog.html', function(req, res, next) {
+  Blog.find({}, function (err, posts) {
+
+    res.render('pages/blog', {
+      title: 'Блог',
+      data: posts
+    });
+
+  });
+});
+
+app.post('/addBlogPost', jsonParser, function(req, res) {
+  var blog = new Blog(req.body);
+
+  blog.save(function(err) {
+    if (err) {
+      res.send('ошибка');
+    } else {
+      console.log('add post');
+      res.send('ok');
+    }
+  });
+});
+
+/* GET db page. */
+app.get('/admin', function(req, res, next) {
+  Blog.find({}, function (err, posts) {
+
+    res.render('admin', {
+      title: 'Админка',
+      data: posts
+    });
+
+  });
+});
+
+// Delete Post
+app.post('/delPost', jsonParser, function(req, res) {
+
+  Blog.findOne({_id: req.body.id}, function (err, post) {
+
+    post.remove(function (err) {
+
+      if (err) {
+        console.log('Error deleted!')
+
+      } else {
+        console.log('User deleted!')
+      }
+    })
+
+  });
+
+  console.log(req.body.id);
+
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

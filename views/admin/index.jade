@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    header.admin__header Панель администрирования
+    ul.admin__menu
+        li.admin__menu-item
+            a(href="#") Блог
+        li.admin__menu-item
+            a(href="#") Мои навыки
+        li.admin__menu-item
+            a(href="#") Мои работы
+
+    section.admin__content
+        .admin__add
+            h2 Страница "Блог"
+            form.form__add-post
+                p Добавить запись
+                input(type="text" id="title" placeholder="Название").contact-input.contact-input--admin
+                br
+                input(type="text" id="date" placeholder="Дата").contact-input.contact-input--admin
+                br
+                textarea(id="body" cols="30" rows="10" placeholder="Текст").contact-textarea.contact-input--admin
+                br
+
+                button.admin__submit#send Добавить
+        .admin__post-list
+            table
+                each item, id in data
+                    tr
+                        td= (id + 1)
+                        td= item.title
+                        td= item.date
+                        td
+                            button(data-id="#{item._id}", data-flag="del").admin__del Удалить
