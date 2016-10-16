@@ -1,0 +1,9 @@
+table
+    each item, id in data
+        tr
+            td= (id + 1)
+            td= item.title
+            td= item.date
+            td
+                button(data-id="#{item._id}", data-flag="del").admin__del Удалить
+

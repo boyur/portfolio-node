@@ -78,7 +78,19 @@ app.post('/delPost', jsonParser, function(req, res) {
   });
 
   console.log(req.body.id);
+  res.send('Пост удален');
 
+});
+
+/* GET about page. */
+app.post('/posts-list', function(req, res, next) {
+  Blog.find({}, function (err, posts) {
+
+    res.render('admin/posts-list', {
+      data: posts
+    });
+
+  });
 });
 
 // view engine setup

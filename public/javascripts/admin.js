@@ -16,27 +16,58 @@ send.addEventListener('click', function() {
   }
 });
 
-var deleteItems = document.querySelectorAll('[data-flag="del"]');
-console.log(deleteItems);
+addEventDelBtn();
 
-for (var i = 0; i < deleteItems.length; i++) {
-  deleteItems[i].addEventListener('click', function () {
-    data = this.dataset;
-    console.log(data.id);
+function addEventDelBtn() {
+  var deleteItems = document.querySelectorAll('[data-flag="del"]');
+  console.log(deleteItems);
 
-    if (data.id == null) return;
+  var content = document.getElementById('posts-list');
 
-    var xhr = new XMLHttpRequest();
+  for (var i = 0; i < deleteItems.length; i++) {
+    deleteItems[i].addEventListener('click', function () {
+      var data = this.dataset;
+      console.log(data.id);
 
-    xhr.open('POST', '/delPost');
+      if (data.id == null) return;
 
-    var idDel = {
-      id: data.id
-    };
-    xhr.setRequestHeader('Content-type', 'application/json');
-    xhr.send(JSON.stringify(idDel));
+      var xhr = new XMLHttpRequest();
 
-    location.href = '/admin';
+      xhr.open('POST', '/delPost');
+      console.log('Открыли запрос на удаление');
+      var idDel = {
+        id: data.id
+      };
+      xhr.setRequestHeader('Content-type', 'application/json');
+      xhr.send(JSON.stringify(idDel));
+      xhr.onload = function() {
+        ajaxLoad('/posts-list', content);
+      };
 
-  });
+    });
+  }
+}
+
+
+function ajaxLoad(content, div) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', content, true); //
+  xhr.onload = function() {
+    div.innerHTML= this.responseText;
+    addEventDelBtn();
+  };
+  xhr.send();
+}
+
+function ajaxDelById(id, inquiry) {
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('POST', inquiry);
+  console.log('Открыли запрос на удаление');
+  var idDel = {
+    id: id
+  };
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.send(JSON.stringify(idDel));
+  
 }
