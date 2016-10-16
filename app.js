@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // DB Settings
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/portfolio');
+mongoose.connect('mongodb://heroku_6brrjdzg:7197jc4beof70c2srssk5voj1p@ds011943.mlab.com:11943/portfolio');
 
 // Routes
 var routes = require('./routes/index');
