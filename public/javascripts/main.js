@@ -1,6 +1,6 @@
 'use strict';
 
-Preloader
+// Preloader
 (function () {
 
   var imgs = [];
