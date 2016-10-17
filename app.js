@@ -7,8 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // DB Settings
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://heroku_6brrjdzg:7197jc4beof70c2srssk5voj1p@ds011943.mlab.com:11943/heroku_6brrjdzg');
-
+mongoose.connect('MONGODB_URI');
 // Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
