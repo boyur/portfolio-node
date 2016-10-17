@@ -1,61 +1,61 @@
 'use strict';
 
-// Preloader
-// (function () {
-//
-//   var imgs = [];
-//   var path;
-//   var preloader = document.getElementById('preloader');
-//   var preloaderCounter = document.getElementById('preloaderCounter');
-//
-//   var dom = document.body.querySelectorAll('*');
-//   Array.prototype.forEach.call(dom, function(el, i){
-//
-//     var background = getComputedStyle(el)['background-image'];
-//
-//     if (background !== 'none') {
-//       path = background.replace('url("', '').replace('")', '');
-//
-//       if( path.indexOf('-gradient(') !== -1 ) return;
-//
-//       imgs.push(path);
-//     }
-//
-//     if (el.tagName == 'IMG') {
-//       path = el.getAttribute('src');
-//
-//       if (!path) return;
-//       imgs.push(path);
-//     }
-//
-//
-//   });
-//
-//   console.log(imgs);
-//
-//   var percents = 100 / imgs.length;
-//   var procent = 0;
-//   var counter = 0;
-//
-//   for (var i = 0; i < imgs.length; i++) {
-//     var img = document.createElement('img');
-//     img.src = imgs[i];
-//
-//     img.onload = function(){
-//       counter++;
-//       procent = Math.round(counter * percents);
-//       preloaderCounter.textContent = procent;
-//
-//       if (procent == 100) {
-//         preloader.style.opacity = '0';
-//         preloader.addEventListener("transitionend", function () {
-//           preloader.style.display = 'none';
-//         }, false);
-//       }
-//     };
-//   }
-//
-// })();
+Preloader
+(function () {
+
+  var imgs = [];
+  var path;
+  var preloader = document.getElementById('preloader');
+  var preloaderCounter = document.getElementById('preloaderCounter');
+
+  var dom = document.body.querySelectorAll('*');
+  Array.prototype.forEach.call(dom, function(el, i){
+
+    var background = getComputedStyle(el)['background-image'];
+
+    if (background !== 'none') {
+      path = background.replace('url("', '').replace('")', '');
+
+      if( path.indexOf('-gradient(') !== -1 ) return;
+
+      imgs.push(path);
+    }
+
+    if (el.tagName == 'IMG') {
+      path = el.getAttribute('src');
+
+      if (!path) return;
+      imgs.push(path);
+    }
+
+
+  });
+
+  console.log(imgs);
+
+  var percents = 100 / imgs.length;
+  var procent = 0;
+  var counter = 0;
+
+  for (var i = 0; i < imgs.length; i++) {
+    var img = document.createElement('img');
+    img.src = imgs[i];
+
+    img.onload = function(){
+      counter++;
+      procent = Math.round(counter * percents);
+      preloaderCounter.textContent = procent;
+
+      if (procent == 100) {
+        preloader.style.opacity = '0';
+        preloader.addEventListener("transitionend", function () {
+          preloader.style.display = 'none';
+        }, false);
+      }
+    };
+  }
+
+})();
 
 // Parallax
 (function () {
