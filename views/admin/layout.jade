@@ -1,6 +1,3 @@
-block variables
-    - var title = 'Админка'
-
 doctype html
 html
     head
@@ -14,12 +11,11 @@ html
         link(rel='stylesheet', href='../stylesheets/style.css')
 
         script(src='../javascripts/admin.js' defer)
-        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBluTHs8Pa9TV-f7951IqQNzOM2H6X-HRU&callback=initMap" defer)
-
 
         <!--[if lt IE 9]>
         script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
         <![endif]-->
 
     body
+        include header
         block content

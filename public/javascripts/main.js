@@ -33,6 +33,15 @@
 
   console.log(imgs);
 
+  if (imgs.length == 0) {
+    preloader.style.opacity = '0';
+    preloader.addEventListener("transitionend", function () {
+      preloader.style.display = 'none';
+    }, false);
+
+    return;
+  }
+
   var percents = 100 / imgs.length;
   var procent = 0;
   var counter = 0;

@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // DB Settings
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect('mongodb://localhost/portfolio'); //process.env.MONGODB_URI
 // Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -21,6 +21,12 @@ var Blog = mongoose.model('blogs', {
   title: String,
   body: String
 });
+
+var Skills = mongoose.model('skills', {
+  type: String,
+  value: Number
+});
+
 
 /* GET blog page. */
 app.get('/blog.html', function(req, res, next) {
@@ -47,17 +53,97 @@ app.post('/addBlogPost', jsonParser, function(req, res) {
   });
 });
 
+// Skills
+app.post('/setSkills', jsonParser, function(req, res) {
+
+
+  Skills.find({}, function (err, skills) {
+    console.log(skills);
+
+    for(var i = 0; i < skills.length; i++){
+      skills[i].remove(function (err) {
+
+        if (err) {
+          console.log('Error deleted!')
+
+        } else {
+          console.log('skill deleted!')
+        }
+      });
+    }
+  });
+
+
+  var skills;
+
+  for (var i = 0; i < req.body.length; i++) {
+    skills = new Skills(req.body[i]);
+
+    console.log(req.body[i]);
+
+    skills.save(function (err) {
+      if (err) {
+        res.send('ошибка');
+      } else {
+        console.log('add skills');
+      }
+    })
+  }
+
+  res.send('ok');
+
+});
+
 /* GET db page. */
-app.get('/admin', function(req, res, next) {
+app.get(['/admin', '/admin/blog'], function(req, res, next) {
   Blog.find({}, function (err, posts) {
 
-    res.render('admin', {
+    res.render('admin/blog', {
       title: 'Админка',
       data: posts
     });
 
   });
 });
+
+/* GET db page. */
+app.get('/admin/skills', function(req, res, next) {
+
+  Skills.find({}, function (err, skills) {
+
+    res.render('admin/skills', {
+      title: 'Админка',
+      data: skills
+    });
+
+  });
+
+});
+
+/* GET db page. */
+app.get('/admin/works', function(req, res, next) {
+
+    res.render('admin/works', {
+      title: 'Админка'
+    });
+
+});
+
+/* GET about page. */
+app.get('/about.html', function(req, res, next) {
+
+  Skills.find({}, function (err, skills) {
+
+    res.render('pages/about', {
+      title: 'Артем Боюр',
+      data: skills
+    });
+
+  });
+
+});
+
+
 
 // Delete Post
 app.post('/delPost', jsonParser, function(req, res) {
@@ -85,12 +171,14 @@ app.post('/delPost', jsonParser, function(req, res) {
 app.post('/posts-list', function(req, res, next) {
   Blog.find({}, function (err, posts) {
 
-    res.render('admin/posts-list', {
+    res.render('admin/blog/posts-list', {
       data: posts
     });
 
   });
 });
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

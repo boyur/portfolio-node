@@ -1,0 +1,81 @@
+extends ../layout
+
+block content
+    section.admin__skills.clearfix
+        .skills__blocks
+            .skills__block
+                h2 Frontend
+                table
+                    tr
+                        td.skills__title
+                            label(for="cssSkill") CSS
+                        td.skills__input
+                            input(type="number" id="cssSkill" data-type="frontend"
+                            value=(data[0] ? data[0].value : 0) max=100 min=0)
+                            | %
+                    tr
+                        td.skills__title
+                            label(for="htmlSkill") HTML
+                        td.skills__input
+                            input(type="number" id="htmlSkill" data-type="frontend"
+                            value=(data[1] ? data[1].value : 0) max=100 min=0)
+                            | %
+                    tr
+                        td.skills__title
+                            label(for="jsSkill") JavaScript
+                        td.skills__input
+                            input(type="number" id="jsSkill" data-type="frontend"
+                            value=(data[2] ? data[2].value : 0) max=100 min=0)
+                            | %
+
+            .skills__block
+                h2 Backend
+                table
+                    tr
+                        td.skills__title
+                            label(for="nodeSkill") CSS
+                        td.skills__input
+                            input(type="number" id="nodeSkill" data-type="backend"
+                            value=(data[3] ? data[3].value : 0) max=100 min=0)
+                            | %
+                    tr
+                        td.skills__title
+                            label(for="phpSkill") HTML
+                        td.skills__input
+                            input(type="number" id="phpSkill" data-type="backend"
+                            value=(data[4] ? data[4].value : 0) max=100 min=0)
+                            | %
+                    tr
+                        td.skills__title
+                            label(for="sqlSkill") JavaScript
+                        td.skills__input
+                            input(type="number" id="sqlSkill" data-type="backend"
+                            value=(data[5] ? data[5].value : 0) max=100 min=0)
+                            | %
+
+            .skills__block
+                h2 WorkFlow
+                table
+                    tr
+                        td.skills__title
+                            label(for="gulpSkill") Gulp
+                        td.skills__input
+                            input(type="number" id="gulpSkill" data-type="workflow"
+                            value=(data[6] ? data[6].value : 0) max=100 min=0)
+                            | %
+                    tr
+                        td.skills__title
+                            label(for="webSkill") WebStorm
+                        td.skills__input
+                            input(type="number" id="webSkill" data-type="workflow"
+                            value=(data[7] ? data[7].value : 0) max=100 min=0)
+                            | %
+                    tr
+                        td.skills__title
+                            label(for="gitSkill") JavaScript
+                        td.skills__input
+                            input(type="number" id="gitSkill" data-type="workflow"
+                            value=(data[8] ? data[8].value : 0) max=100 min=0)
+                            | %
+
+    button.skills__btn#skillsBtn Сохранить

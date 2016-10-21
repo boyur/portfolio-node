@@ -1,17 +1,49 @@
-send.addEventListener('click', function() {
+var send = document.getElementById('send');
+
+if (send) {
+  send.addEventListener('click', function() {
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('POST', '/addBlogPost');
+
+    var data = {
+      date: document.getElementById('date').value,
+      title: document.getElementById('title').value,
+      body: document.getElementById('body').value
+    };
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.send(JSON.stringify(data));
+    xhr.onload = function() {
+      location.href = '/admin';
+      console.log('send data');
+    }
+  });
+}
+
+
+skillsBtn.addEventListener('click', function () {
   var xhr = new XMLHttpRequest();
 
-  xhr.open('POST', '/addBlogPost');
+  xhr.open('POST', '/setSkills');
 
-  var data = {
-    date: document.getElementById('date').value,
-    title: document.getElementById('title').value,
-    body: document.getElementById('body').value
-  };
+  var allSkills = document.getElementsByTagName('input');
+  var data = [];
+
+  for (var i=0; i < allSkills.length; i++) {
+    data[i] = {
+      type: allSkills[i].dataset.type,
+      value: allSkills[i].value
+    };
+  }
+
+  data = JSON.stringify(data);
+
+  console.log(data);
+
   xhr.setRequestHeader('Content-type', 'application/json');
-  xhr.send(JSON.stringify(data));
+  xhr.send(data);
   xhr.onload = function() {
-    location.href = '/admin';
+    //location.href = '/admin/skills';
     console.log('send data');
   }
 });
