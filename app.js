@@ -5,9 +5,15 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var multer	=	require('multer');
+
+
+
+
+
 // DB Settings
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI); //mongodb://localhost/portfolio
+mongoose.connect(process.env.MONGODB_URI); //process.env.MONGODB_URI mongodb://localhost/portfolio
 // Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -25,6 +31,26 @@ var Blog = mongoose.model('blogs', {
 var Skills = mongoose.model('skills', {
   type: String,
   value: Number
+});
+
+var storage	=	multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, "../public/uploads");
+  },
+  filename: function (req, file, callback) {
+    callback(null, Date.now() + '-' + file.originalname);
+  }
+});
+
+var upload = multer({ storage : storage }).single('userPhoto');
+
+app.post('/api/photo',function(req,res){
+  upload(req,res,function(err) {
+    if(err) {
+      return res.end("Error uploading file.");
+    }
+    res.end("File is uploaded");
+  });
 });
 
 
