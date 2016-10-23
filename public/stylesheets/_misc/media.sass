@@ -1,6 +1,7 @@
 $mobile-width: 340px
 $tablet-width: 768px
 $desktop-width: 1200px
+$desktop-full-width: 1800px
 
 @mixin mobile
   @media (max-width: #{$tablet-width - 1px})
@@ -13,4 +14,8 @@ $desktop-width: 1200px
 
 @mixin desktop
   @media (min-width: #{$desktop-width})
+    @content
+
+@mixin desktop-full
+  @media (min-width: #{$desktop-full-width})
     @content

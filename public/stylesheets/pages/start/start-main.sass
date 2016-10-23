@@ -26,7 +26,7 @@
   left: 50%
   height: 106%
   bottom: -15%
-  -webkit-transition: transform 0.1s
+  transition: transform 0.1s
 
   img
     display: block
@@ -125,6 +125,7 @@
 @include mobile
   .start__btn
     padding: 0 18px
+    font-size: 14px
 
 .start__btns
   font-family: robotoregular, serif
@@ -171,7 +172,7 @@
     background: white
     color: #00bfa5
 
-@include desktop
+@include desktop-full
   .auth-btn
     right: 100px
 
