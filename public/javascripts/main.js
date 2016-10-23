@@ -193,6 +193,7 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 44.724, lng: 37.767},
     zoom: 13,
+    draggable: !("ontouchend" in document),
     scrollwheel: false,
     disableDefaultUI: true,
     styles: [
