@@ -8,12 +8,12 @@ $desktop-full-width: 1800px
     @content
 
 @mixin tablet
-  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px})
+  @media (max-width: #{$desktop-width - 1px})
     @content
 
 
 @mixin desktop
-  @media (min-width: #{$desktop-width})
+  @media (max-width: #{$desktop-full-width - 1px})
     @content
 
 @mixin desktop-full

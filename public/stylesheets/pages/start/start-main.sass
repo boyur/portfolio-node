@@ -28,6 +28,9 @@
   bottom: -15%
   transition: transform 0.1s
 
+  @include tablet
+    display: none
+
   img
     display: block
     position: absolute
@@ -188,3 +191,5 @@
   .auth-btn
     position: relative
     right: auto
+    left: 50%
+    transform: translateX(-50%)
