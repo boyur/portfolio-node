@@ -5,18 +5,18 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var dbmodel = require('./models/db/model');
+var db = require('./models/db/model');
 
 var routes = require('./routes/index');
-//var users = require('./routes/users');
+
 var works = require('./routes/admin/works');
 
 var app = express();
 
 var jsonParser = bodyParser.json();
 
-var Blog = dbmodel.Blog;
-var Skills = dbmodel.Skills;
+var Blog = db.Blog;
+var Skills = db.Skills;
 
 
 /* GET blog page. */
@@ -33,7 +33,6 @@ app.get('/blog.html', function(req, res, next) {
 
 app.post('/addBlogPost', jsonParser, function(req, res) {
   var blog = new Blog(req.body);
-
   blog.save(function(err) {
     if (err) {
       res.send('ошибка');
@@ -46,7 +45,6 @@ app.post('/addBlogPost', jsonParser, function(req, res) {
 
 // Skills
 app.post('/setSkills', jsonParser, function(req, res) {
-
 
   Skills.find({}, function (err, skills) {
     console.log(skills);
@@ -63,7 +61,6 @@ app.post('/setSkills', jsonParser, function(req, res) {
       });
     }
   });
-
 
   var skills;
 
@@ -182,7 +179,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use(works);
-//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

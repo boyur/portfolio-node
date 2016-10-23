@@ -11,5 +11,13 @@ var Skills = mongoose.model('skills', {
   value: Number
 });
 
+var Works = mongoose.model('works', {
+  title: String,
+  technology: String,
+  link: String,
+  file: String
+});
+
 module.exports.Blog = Blog;
 module.exports.Skills = Skills;
+module.exports.Works = Works;

@@ -2,26 +2,12 @@ extends ../layout
 
 block content
     section.admin__content
-        form#uploadForm(enctype='multipart/form-data', action='/api/photo', method='POST')
-            input(type='file', name='userPhoto')
+        form#uploadForm(enctype='multipart/form-data', action='/admin/works', method='post')
+            input(type='text', name='title')#worksTitle.contact-input.contact-input--admin
+            input(type='text', name='technology')#worksTech.contact-input.contact-input--admin
+            input(type='text', name='link')#worksLink.contact-input.contact-input--admin
+            input(type='file', name='userPhoto')#worksFile
             input(type='submit', value='Upload Image', name='submit')
             span#status
 
-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')
-script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js')
-script.
-    $(document).ready(function() {
-        $('#uploadForm').submit(function() {
-            $("#status").empty().text("File is uploading...");
-            $(this).ajaxSubmit({
-                error: function(xhr) {
-                    status('Error: ' + xhr.status);
-                },
-                success: function(response) {
-                    console.log(response)
-                    $("#status").empty().text(response);
-                }
-            });
-            return false;
-        });
-    });
+    script(src='../javascripts/upload.js' defer)
