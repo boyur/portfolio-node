@@ -3232,6 +3232,9 @@ input {
     vertical-align: middle;
     height: 100%;
     width: 0; }
+  @media (max-width: 1199px) {
+    .wrapper-start {
+      background: url("../images/welcome/bg.jpg") no-repeat center/cover; } }
 
 @media (max-width: 767px) {
   .wrapper-start {
