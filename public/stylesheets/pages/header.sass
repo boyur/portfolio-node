@@ -48,6 +48,8 @@
   float: right
   color: white
   @include tablet
+    padding: 25px
+  @include mobile
     padding: 10px
 
 
@@ -57,7 +59,7 @@
   width: 40px
   height: 35px
   cursor: pointer
-  @include tablet
+  @include mobile
     transform: scale(0.6)
 
 
@@ -117,7 +119,6 @@
     right: 0
     height: 100%
     text-align: center
-    overflow: auto
     animation: curtian .5s forwards
     &:after
       content: ''

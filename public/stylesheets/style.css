@@ -2812,7 +2812,8 @@ input {
 .title-dashes__bg {
   display: inline-block;
   position: relative;
-  opacity: .07; }
+  opacity: .07;
+  visibility: hidden; }
 
 .title-dashes__bg--works svg {
   width: 506px;
@@ -2922,6 +2923,9 @@ input {
   color: white; }
   @media (min-width: 768px) and (max-width: 1199px) {
     .nav {
+      padding: 25px; } }
+  @media (max-width: 767px) {
+    .nav {
       padding: 10px; } }
 
 .nav__trigger {
@@ -2930,7 +2934,7 @@ input {
   width: 40px;
   height: 35px;
   cursor: pointer; }
-  @media (min-width: 768px) and (max-width: 1199px) {
+  @media (max-width: 767px) {
     .nav__trigger {
       transform: scale(0.6); } }
 
@@ -2982,7 +2986,6 @@ input {
     right: 0;
     height: 100%;
     text-align: center;
-    overflow: auto;
     animation: curtian .5s forwards; }
     .nav--main .nav__drop:after {
       content: '';
@@ -3115,7 +3118,8 @@ input {
   box-sizing: border-box;
   padding: 18px 30px;
   color: white;
-  font-size: 0; }
+  font-size: 0;
+  text-align: left; }
 
 .footer__buttom {
   font-family: robotolight, serif;
@@ -3535,7 +3539,6 @@ input {
       padding: 10px; } }
 
 .about-talk__comment {
-  display: flex;
   width: 800px;
   margin: 20px auto 40px; }
   @media (min-width: 768px) and (max-width: 1199px) {
@@ -3543,7 +3546,8 @@ input {
       width: auto; } }
   @media (max-width: 767px) {
     .about-talk__comment {
-      display: block; } }
+      display: block;
+      width: auto; } }
 
 .about-talk__comment-block {
   display: inline-block;
