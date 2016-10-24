@@ -3227,6 +3227,7 @@ input {
   bottom: 0;
   text-align: center;
   min-height: 550px;
+  -webkit-perspective: 1000;
   perspective: 1000; }
   .wrapper-start:after {
     content: '';
