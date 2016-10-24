@@ -30,6 +30,8 @@ router.post('/admin/works', function (req, res) {
     console.log(req.file);
     console.log(req.body);
 
+    res.send('Upload image');
+
     // Everything went fine
   })
 });

@@ -1,7 +1,8 @@
 'use strict';
 
+document.addEventListener("DOMContentLoaded", preloader);
 // Preloader
-(function () {
+function preloader () {
 
   var imgs = [];
   var path;
@@ -64,7 +65,7 @@
     };
   }
 
-})();
+}
 
 // Parallax
 (function () {

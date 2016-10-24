@@ -2821,8 +2821,10 @@ input {
 .title-dashes__bg {
   display: inline-block;
   position: relative;
-  opacity: .07;
-  visibility: hidden; }
+  opacity: .07; }
+  @media (max-width: 1199px) {
+    .title-dashes__bg {
+      visibility: hidden; } }
 
 .title-dashes__bg--works svg {
   width: 506px;
