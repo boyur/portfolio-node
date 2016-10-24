@@ -24,20 +24,37 @@ router.post('/admin/works', function (req, res) {
   upload(req, res, function (err) {
     if (err) {
       // An error occurred when uploading
-      return;
+      return res.end("Error uploading file.");
+    } else {
+
+      console.log(req.file);
+      console.log(req.body);
+
+      var data = req.body;
+      data.file = req.file.path;
+
+      console.log(data);
+
+      var work = new Works(data);
+
+      work.save(function(err) {
+        if (err) {
+          return res.end("Error save to DB.");
+        } else {
+          console.log('add slide');
+
+          res.end('Upload image');
+        }
+      });
+
     }
-
-    console.log(req.file);
-    console.log(req.body);
-
-    res.send('Upload image');
 
     // Everything went fine
   })
 });
 
 /* GET db page. */
-router.get('/admin/works', function(req, res, next) {
+router.get('/admin/works', jsonParser, function(req, res, next) {
 
   res.render('admin/works', {
     title: 'Админка'
