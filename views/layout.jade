@@ -13,7 +13,6 @@ html
         meta(content="ie=edge" http-equiv="x-ua-compatible")
         link(rel='stylesheet', href='../stylesheets/style.css')
 
-        script(src='../javascripts/main.js' async)
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBluTHs8Pa9TV-f7951IqQNzOM2H6X-HRU&callback=initMap" defer)
 
 
@@ -27,3 +26,5 @@ html
                 .preloader__spiner
                 span.preloader__value(data-unit="%")#preloaderCounter 0
         block content
+
+        script(src='../javascripts/main.js' defer)
