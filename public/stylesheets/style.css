@@ -3961,7 +3961,6 @@ input {
   box-sizing: border-box;
   position: relative;
   width: 50%;
-  height: 100%;
   float: left;
   padding: 20px 40px;
   background: #F0EFE9; }
@@ -3982,7 +3981,6 @@ input {
 .about__right {
   box-sizing: border-box;
   width: 50%;
-  height: 100%;
   float: right;
   padding: 20px 40px;
   background: #EFEBE0;
@@ -4020,7 +4018,6 @@ input {
       margin: 20px auto; } }
 
 .about__text {
-  max-width: 440px;
   text-align: left;
   line-height: 1.5;
   margin: 30px auto; }
