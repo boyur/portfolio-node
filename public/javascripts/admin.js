@@ -1,4 +1,5 @@
 var send = document.getElementById('send');
+var skillsBtn = document.getElementById('skillsBtn');
 
 if (send) {
   send.addEventListener('click', function() {
@@ -21,32 +22,35 @@ if (send) {
 }
 
 
-// skillsBtn.addEventListener('click', function () {
-//   var xhr = new XMLHttpRequest();
-//
-//   xhr.open('POST', '/setSkills');
-//
-//   var allSkills = document.getElementsByTagName('input');
-//   var data = [];
-//
-//   for (var i=0; i < allSkills.length; i++) {
-//     data[i] = {
-//       type: allSkills[i].dataset.type,
-//       value: allSkills[i].value
-//     };
-//   }
-//
-//   data = JSON.stringify(data);
-//
-//   console.log(data);
-//
-//   xhr.setRequestHeader('Content-type', 'application/json');
-//   xhr.send(data);
-//   xhr.onload = function() {
-//     //location.href = '/admin/skills';
-//     console.log('send data');
-//   }
-// });
+skillsBtn.addEventListener('click', function () {
+  console.log("Click");
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('POST', '/setSkills');
+
+  var allSkills = document.getElementsByTagName('input');
+  var data = [];
+
+  for (var i=0; i < allSkills.length; i++) {
+    data[i] = {
+      name: allSkills[i].id,
+      type: allSkills[i].dataset.type,
+      value: allSkills[i].value
+    };
+  }
+
+  data = JSON.stringify(data);
+
+  console.log(data);
+
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.send(data);
+  xhr.onload = function() {
+    //location.href = '/admin/skills';
+    console.log('send data');
+  }
+});
 
 addEventDelBtn();
 

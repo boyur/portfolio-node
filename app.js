@@ -65,6 +65,8 @@ app.post('/setSkills', jsonParser, function(req, res) {
 
   var skills;
 
+  console.log(req.body);
+
   for (var i = 0; i < req.body.length; i++) {
     skills = new Skills(req.body[i]);
 
@@ -99,10 +101,23 @@ app.get(['/admin', '/admin/blog'], function(req, res, next) {
 app.get('/admin/skills', function(req, res, next) {
 
   Skills.find({}, function (err, skills) {
+    
+    var objSkills = {};
+
+    //console.log(skills);
+    
+    skills.map(function (item) {
+      objSkills[item.name] = {
+        type: item.type,
+        value: item.value
+      }
+    });
+
+    console.log(objSkills);
 
     res.render('admin/skills', {
       title: 'Админка',
-      data: skills
+      data: objSkills
     });
 
   });
@@ -114,9 +129,23 @@ app.get('/about.html', function(req, res, next) {
 
   Skills.find({}, function (err, skills) {
 
+    var objSkills = {};
+
+    //console.log(skills);
+
+    skills.map(function (item) {
+      objSkills[item.name] = {
+        type: item.type,
+        value: item.value
+      }
+    });
+
+    console.log(objSkills);
+
+
     res.render('pages/about', {
       title: 'Артем Боюр',
-      data: skills
+      data: objSkills
     });
 
   });

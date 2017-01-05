@@ -7,6 +7,7 @@ var Blog = mongoose.model('blogs', {
 });
 
 var Skills = mongoose.model('skills', {
+  name: String,
   type: String,
   value: Number
 });

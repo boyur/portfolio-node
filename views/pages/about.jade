@@ -38,19 +38,19 @@ block content
                         .skill__item
                             svg(viewBox="0 0 32 32")
                                 circle(r="16" cx="16" cy="16").circle
-                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data[0] ? data[0].value : 0) + " 100").circle-diagrams
+                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data['cssSkill'] ? data['cssSkill'].value : 0) + " 100").circle-diagrams
                             .skill__title HTML5
 
                         .skill__item
                             svg(viewBox="0 0 32 32")
                                 circle(r="16" cx="16" cy="16").circle
-                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data[1] ? data[1].value : 0) + " 100").circle-diagrams
+                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data['cssSkill'] ? data[1].value : 0) + " 100").circle-diagrams
                             .skill__title CSS3
 
                         .skill__item
                             svg(viewBox="0 0 32 32")
                                 circle(r="16" cx="16" cy="16").circle
-                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data[2] ? data[2].value : 0) + " 100").circle-diagrams
+                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data['cssSkill'] ? data[2].value : 0) + " 100").circle-diagrams
                             .skill__title JavaScript& jQuery
                     // --- Backend --- //
                     .skill__row
@@ -58,7 +58,7 @@ block content
                         .skill__item
                             svg(viewBox="0 0 32 32")
                                 circle(r="16" cx="16" cy="16").circle
-                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data[3] ? data[3].value : 0) + " 100").circle-diagrams
+                                circle(r="16" cx="16" cy="16" stroke-dasharray=(data['cssSkill'] ? data[3].value : 0) + " 100").circle-diagrams
                             .skill__title PHP
 
                         .skill__item

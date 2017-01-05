@@ -1,4 +1,5 @@
 var send = document.getElementById('send');
+var skillsBtn = document.getElementById('skillsBtn');
 
 if (send) {
   send.addEventListener('click', function() {
@@ -22,6 +23,8 @@ if (send) {
 
 
 skillsBtn.addEventListener('click', function () {
+  console.log("Click");
+
   var xhr = new XMLHttpRequest();
 
   xhr.open('POST', '/setSkills');
@@ -31,6 +34,7 @@ skillsBtn.addEventListener('click', function () {
 
   for (var i=0; i < allSkills.length; i++) {
     data[i] = {
+      name: allSkills[i].id,
       type: allSkills[i].dataset.type,
       value: allSkills[i].value
     };
