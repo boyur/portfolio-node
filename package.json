@@ -22,7 +22,9 @@
     "serve-favicon": "~2.3.0"
   },
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "node-sass": "^4.1.1"
+  },
   "author": "",
   "license": "ISC",
   "description": ""

@@ -18,29 +18,10 @@ var jsonParser = bodyParser.json();
 
 var Blog = db.Blog;
 var Skills = db.Skills;
-//////
-var auth = function (req, res, next) {
-  function unauthorized(res) {
-    res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
-    return res.send(401);
-  }
 
-  var user = basicAuth(req);
-
-  if (!user || !user.name || !user.pass) {
-    return unauthorized(res);
-  }
-
-  if (user.name === 'foo' && user.pass === 'bar') {
-    return next();
-  } else {
-    return unauthorized(res);
-  }
-};
-//////
 
 /* GET blog page. */
-app.get('/blog.html', auth, function(req, res, next) {
+app.get('/blog.html', function(req, res, next) {
   Blog.find({}, function (err, posts) {
 
     res.render('pages/blog', {
