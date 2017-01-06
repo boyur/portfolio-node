@@ -16,7 +16,7 @@ if (send) {
     xhr.send(JSON.stringify(data));
     xhr.onload = function() {
       location.href = '/admin';
-      console.log('send data');
+      console.log('send data2');
     }
   });
 }
@@ -105,5 +105,5 @@ function ajaxDelById(id, inquiry) {
   };
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.send(JSON.stringify(idDel));
-  
+
 }

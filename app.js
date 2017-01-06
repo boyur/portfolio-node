@@ -131,8 +131,6 @@ app.get('/about.html', function(req, res, next) {
 
     var objSkills = {};
 
-    //console.log(skills);
-
     skills.map(function (item) {
       objSkills[item.name] = {
         type: item.type,
