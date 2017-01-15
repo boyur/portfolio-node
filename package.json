@@ -17,13 +17,15 @@
     "mongoose": "^4.6.3",
     "morgan": "~1.7.0",
     "multer": "^1.2.0",
-    "node-sass-middleware": "0.8.0",
     "serve-favicon": "~2.3.0"
   },
   "main": "app.js",
   "devDependencies": {
+    "autoprefixer": "^6.6.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-watch": "^4.3.11",
-    "node-sass": "^4.1.1"
+    "node-sass": "^4.1.1",
+    "postcss-middleware": "^1.1.2"
   },
   "author": "",
   "license": "ISC",

@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var basicAuth = require('basic-auth');
 
 var db = require('./models/db/model');
 
@@ -42,6 +41,24 @@ app.post('/addBlogPost', jsonParser, function(req, res) {
       res.send('ok');
     }
   });
+});
+
+// addSkills
+app.post('/addSkill', jsonParser, function(req, res) {
+
+  console.log(req.body);
+
+  var skills = new Skills(req.body);
+
+  skills.save(function (err) {
+    if (err) {
+      res.send('ошибка');
+    } else {
+      console.log('add skill');
+    }
+  });
+
+  res.send('ok');
 });
 
 // Skills
@@ -100,24 +117,15 @@ app.get(['/admin', '/admin/blog'], function(req, res, next) {
 /* GET db page. */
 app.get('/admin/skills', function(req, res, next) {
 
+  console.log("get");
+
   Skills.find({}, function (err, skills) {
-    
-    var objSkills = {};
 
-    //console.log(skills);
-    
-    skills.map(function (item) {
-      objSkills[item.name] = {
-        type: item.type,
-        value: item.value
-      }
-    });
-
-    console.log(objSkills);
+    console.log(skills);
 
     res.render('admin/skills', {
       title: 'Админка',
-      data: objSkills
+      data: skills
     });
 
   });
@@ -197,12 +205,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(require('node-sass-middleware')({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  indentedSyntax: true,
-  sourceMap: true
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);

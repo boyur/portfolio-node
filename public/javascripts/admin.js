@@ -1,5 +1,10 @@
 var send = document.getElementById('send');
 var skillsBtn = document.getElementById('skillsBtn');
+var skill = document.getElementById('addSkillFrontInput');
+
+var addSkillFront = document.getElementById('addSkillFront');
+
+console.log(addSkillFront);
 
 if (send) {
   send.addEventListener('click', function() {
@@ -21,6 +26,30 @@ if (send) {
   });
 }
 
+addSkillFront.addEventListener('click', function () {
+
+  console.log("click");
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.open('POST', '/addSkill');
+
+  var data = {
+    title: skill.value,
+    type: "frontend"
+  };
+
+  data = JSON.stringify(data);
+
+  console.log(data);
+
+  xhr.setRequestHeader('Content-type', 'application/json');
+  xhr.send(data);
+  xhr.onload = function() {
+    console.log('send data');
+  }
+
+});
 
 skillsBtn.addEventListener('click', function () {
   console.log("Click");
@@ -35,6 +64,7 @@ skillsBtn.addEventListener('click', function () {
   for (var i=0; i < allSkills.length; i++) {
     data[i] = {
       name: allSkills[i].id,
+      title: allSkills[i].title,
       type: allSkills[i].dataset.type,
       value: allSkills[i].value
     };
@@ -47,7 +77,6 @@ skillsBtn.addEventListener('click', function () {
   xhr.setRequestHeader('Content-type', 'application/json');
   xhr.send(data);
   xhr.onload = function() {
-    //location.href = '/admin/skills';
     console.log('send data');
   }
 });

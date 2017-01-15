@@ -6,76 +6,19 @@ block content
             .skills__block
                 h2 Frontend
                 table
+                    each item in data
+                        tr
+                            td.skills__title
+                                label(for=item['name']) #{item['title']}
+                            td.skills__input
+                                input(type="number" id=item['name'] data-type=item['type']
+                                value=(item['value'] ? item['value'].value : 0) max=100 min=0)
+                                | %
                     tr
-                        td.skills__title
-                            label(for="cssSkill") CSS
-                        td.skills__input
-                            input(type="number" id="cssSkill" data-type="frontend"
-                            value=(data['cssSkill'] ? data['cssSkill'].value : 0) max=100 min=0)
-                            | %
-                    tr
-                        td.skills__title
-                            label(for="htmlSkill") HTML
-                        td.skills__input
-                            input(type="number" id="htmlSkill" data-type="frontend"
-                            value=(data['htmlSkill'] ? data['htmlSkill'].value : 0) max=100 min=0)
-                            | %
-                    tr
-                        td.skills__title
-                            label(for="jsSkill") JavaScript
-                        td.skills__input
-                            input(type="number" id="jsSkill" data-type="frontend"
-                            value=(data['jsSkill'] ? data['jsSkill'].value : 0) max=100 min=0)
-                            | %
+                        td
+                            input(type="text" id="addSkillFrontInput" placeholder="Название скилла")
+                        td
+                            button#addSkillFront Добавить
 
-            .skills__block
-                h2 Backend
-                table
-                    tr
-                        td.skills__title
-                            label(for="nodeSkill") CSS
-                        td.skills__input
-                            input(type="number" id="nodeSkill" data-type="backend"
-                            value=(data['nodeSkill'] ? data['nodeSkill'].value : 0) max=100 min=0)
-                            | %
-                    tr
-                        td.skills__title
-                            label(for="phpSkill") HTML
-                        td.skills__input
-                            input(type="number" id="phpSkill" data-type="backend"
-                            value=(data['phpSkill'] ? data['phpSkill'].value : 0) max=100 min=0)
-                            | %
-                    tr
-                        td.skills__title
-                            label(for="sqlSkill") JavaScript
-                        td.skills__input
-                            input(type="number" id="sqlSkill" data-type="backend"
-                            value=(data['sqlSkill'] ? data['sqlSkill'].value : 0) max=100 min=0)
-                            | %
-
-            .skills__block
-                h2 WorkFlow
-                table
-                    tr
-                        td.skills__title
-                            label(for="gulpSkill") Gulp
-                        td.skills__input
-                            input(type="number" id="gulpSkill" data-type="workflow"
-                            value=(data['gulpSkill'] ? data['gulpSkill'].value : 0) max=100 min=0)
-                            | %
-                    tr
-                        td.skills__title
-                            label(for="webSkill") WebStorm
-                        td.skills__input
-                            input(type="number" id="webSkill" data-type="workflow"
-                            value=(data['webSkill'] ? data['webSkill'].value : 0) max=100 min=0)
-                            | %
-                    tr
-                        td.skills__title
-                            label(for="gitSkill") JavaScript
-                        td.skills__input
-                            input(type="number" id="gitSkill" data-type="workflow"
-                            value=(data['gitSkill'] ? data['gitSkill'].value : 0) max=100 min=0)
-                            | %
 
     button.skills__btn#skillsBtn Сохранить

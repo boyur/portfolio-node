@@ -14,8 +14,20 @@ function preloader () {
 
     var background = getComputedStyle(el)['background-image'];
 
+    console.log(background);
+
     if (background !== 'none') {
-      path = background.replace('url("', '').replace('")', '');
+
+      if (background.match( /url\("/ )) {
+        path = background.replace( /url\("/ , "").replace( /"\)/ , "");
+      } else {
+        path = background.replace( /url\(/ , "").replace( /\)/ , "");
+      }
+
+
+
+
+      console.log(path);
 
       if( path.indexOf('-gradient(') !== -1 ) return;
 
